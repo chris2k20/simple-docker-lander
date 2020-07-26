@@ -25,7 +25,7 @@ Example `docker-compose.yml` file:
 version: '3.1'
 services:
   simple-docker-lander:
-    image: benletchford/simple-docker-lander:latest
+    image: user2k20/landing-page 
     restart: always
     ports:
       - 80:80

@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  simple-docker-lander:
+    image: user2k20/landing-page:latest
+    # build: .
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      CONFIG: |
+        site-name: Landing Page
+        footer: A dockerized landing page with bootstrap framework
+        links:
+          - name: Service 1
+            text: This is my first Service. 
+            href: https://www.google.com/
+          - name: Service 2
+            text: My second Service. 
+            href: https://reddit.com/
