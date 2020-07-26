@@ -13,3 +13,4 @@ ENV PIPENV_DONT_LOAD_ENV=1
 ENV PYTHONUNBUFFERED=1
 
 ENTRYPOINT pipenv run python simple-docker-lander.py
+EXPOSE 80/tcp
