@@ -25,25 +25,22 @@ Example `docker-compose.yml` file:
 version: '3.1'
 services:
   simple-docker-lander:
-    image: user2k20/landing-page 
+    image: user2k20/landing-page:latest
+    # build: .
     restart: always
     ports:
       - 80:80
     environment:
       CONFIG: |
-        site-name: my-awesome-site
-        link-mode: tab
+        site-name: Landing Page
+        footer: A dockerized landing page with bootstrap framework
         links:
           - name: Service 1
+            text: This is my first Service. 
             href: https://www.google.com/
           - name: Service 2
+            text: My second Service. 
             href: https://reddit.com/
-          - name: Twitter
-            href: https://twitter.com/
-            group: Social Networks
-          - name: Facebook
-            href: https://facebook.com/
-            group: Social Networks
 ```
 
 As you can see, just populate the `CONFIG` environment variable with a `YAML` string.
@@ -56,8 +53,6 @@ As you can see, just populate the `CONFIG` environment variable with a `YAML` st
 
 `links`: a `YAML` array of items each containing both a `name` (link value) and `href` (link target).
 
-`links[].group`: will group together links that have the same group name together under a sub-list.
-
 ## Docker Build
 
 Build and run the docker image.
@@ -65,3 +60,6 @@ Build and run the docker image.
 $ docker build -t simple-docker-lander .
 $ docker run -it --rm -p 80:80 --name simple-docker-lander simple-docker-lander
 ```
+
+## Forked 
+This repo is forked from benletchford/simple-docker-lander - Thank you for your work! :) 
