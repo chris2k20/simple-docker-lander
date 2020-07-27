@@ -47,17 +47,16 @@ As you can see, just populate the `CONFIG` environment variable with a `YAML` st
 
 ## Configuration
 
-`site-name`: the `<title>` value of the HTML document.
-
-`link-mode`: can be set to `tab` or omitted completely for default link behaviour. If `tab`, it adds `target="_blank"` to links.
-
-`links`: a `YAML` array of items each containing both a `name` (link value) and `href` (link target).
+- `site-name`: the `<title>` value of the HTML document.
+- `footer`: the footer of the document.
+- `links`: a `YAML` array of items each containing both a `name` (link value), `text` (as description) and `href` (link target).
 
 ## Docker Build
 
 Build and run the docker image.
 ```
-$ docker build -t simple-docker-lander .
+$ git clone https://github.com/chris2k20/simple-docker-lander
+$ docker build -t simple-docker-lander ./simple-docker-lander
 $ docker run -it --rm -p 80:80 --name simple-docker-lander simple-docker-lander
 ```
 
